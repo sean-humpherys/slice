@@ -1,12 +1,17 @@
+""" Runs SLICE on the desired files
+    Specify the input directory of files to run SLICE on
+    Specify the single, text output file
+
+"""
 import SLICEngine
-for y in xrange(2,3): #Run 12 questions from CIFA through SPLICE
-    intQuestionNum = y
-    strDirectory = r'D:\AarenEmails\test'
-    strFileN = r'%2d.txt' % (intQuestionNum)
-    s=SLICEngine.SLICEngine(strDirectory)
-    s.setOutputFileName(strFileN) 
-    s.runProgram()
-    print "end................."
+
+
+strDirectory = r'D:\AarenEmails\test'
+strFileN = r'Results.txt'
+s = SLICEngine.SLICEngine(strDirectory)
+s.setOutputFileName(strFileN)
+s.runProgram()
+print("...Finished.................")
 
 
 '''
@@ -41,7 +46,3 @@ for y in xrange(1,13): #Run 12 questions from CIFA through SPLICE
     print "end................."
 
 '''
-
-
-
-    
