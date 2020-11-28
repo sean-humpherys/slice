@@ -1,20 +1,22 @@
 # Simple tests of abbreviations module
-
 from abbreviations import Abbreviation
 
 
 abbr = Abbreviation()
 # should be true values
-print(abbr.isabbrev("Dr"))
-print(abbr.isabbrev("a"))
-print(abbr.isabbrev("I"))
+assert abbr.is_abbreviation("Dr") == True
+assert abbr.is_abbreviation("a") == True
+assert abbr.is_abbreviation("I") == True
+
 
 # should be false values
-print(abbr.isabbrev("in"))
-print(abbr.isabbrev("doctor"))
-print(abbr.isabbrev("mister"))
-print(abbr.isabbrev("Dr."))
+assert abbr.is_abbreviation("in") == False
+assert abbr.is_abbreviation("doctor") == False
+assert abbr.is_abbreviation("mister") == False
+assert abbr.is_abbreviation("Dr.") == False
+assert abbr.is_abbreviation("") == False
 
+print("Test Passed")
 
 """Design notes
 The abbreviationsLower.txt file includes each letter in the alphabet. One unintented consequence is the letter "a" is a letter AND an article
