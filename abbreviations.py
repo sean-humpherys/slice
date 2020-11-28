@@ -1,21 +1,26 @@
-# The abbrevfile is a list of abbreviations that are used to help the
-# sentence splitter identify sentences and ignore stuff like "Dr."
-# Precondition: punctuation, like periods, have been removed
+from pathlib import Path
+
 
 class Abbreviation:
+    """ Creates a list of abbreviations that are used to help the sentence splitter identify sentences and ignore stuff like 'Dr.'
+    """
+
     def __init__(self):
-        abbrevfile = r"abbreviationsLower.txt"
-        g = open(abbrevfile, 'r')
-        abbrevstr = g.read()
+        path = Path(r"abbreviationsLower.txt")
+        with open(path, mode='r') as f:
+            abbrev_str = f.read()
+            self.abbreviations = abbrev_str.split()
 
-        self.L = abbrevstr.split()
+    def is_abbreviation(self, word=""):
+        """
+        Returns True if the word is in a list of predefined abbreviations
 
-    def isabbrev(self, s):
+        Precondition:  punctuation, like periods, have been removed from the testable abbreviation
+
+        Arguments: 
+            word: string
+
+        Return: 
+            boolean.  True if the word is in a list of predefined abbreviations
         """
-        The abbrev method compares words to the abbrevfile
-        """
-        abbrevs = self.L
-        if s.lower() in abbrevs:
-            return True
-        else:
-            return False
+        return True if word.lower() in self.abbreviations else False
