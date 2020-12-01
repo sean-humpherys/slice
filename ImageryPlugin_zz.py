@@ -1,6 +1,23 @@
 # for plugin to be recognized by the SLICEngine, it must end in zz.py, such as 'pluginzz.py'
 from pluginInterface import Interface
 import re
+from path import Path
+
+
+def open_dictionary(whissell_file_loc=r'dictionaries/Whissell_dictionary_English.txt'):
+    """Open's the Dictionary of Affect by Whissell. Words and ratings start after the header ends on line 39. 
+    Order of a line in the dictionary is : word, pleasantness rating, activation, imagery. 
+    Delimeter is a series of white spaces. 
+    """
+    path = Path(whissell_file_loc)
+    words_start_at = 39
+    with open(path, mode='r') as f:
+        whole_file = f.readlines()
+        whiss_dict = {}
+        for i in range(words_start_at, len(whole_file)):
+            ratings = whole_file[i].split()
+            whiss_dict[ratings[0]] = (ratings[1], ratings[2], ratings[3])
+    return whiss_dict
 
 class plugin(Interface):
     """must have process and setTextObjectType functions"""
