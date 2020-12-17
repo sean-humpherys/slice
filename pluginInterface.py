@@ -1,5 +1,5 @@
 class Interface:
-    def __init__( self ):
+    def __init__(self):
         if self.__class__ == Interface:
             # I'm an abstract base class, don't instantiate me.
             raise TypeError
@@ -9,5 +9,3 @@ class Interface:
 
     def setTextObjectType(self):
         raise TypeError
-
-

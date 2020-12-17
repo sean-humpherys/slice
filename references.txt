@@ -1,0 +1,5 @@
+References:
+Whissell Cynthia. 2009. “Using the Revised Dictionary of Affect in Language to quantify the emotional undertones of samples of natural language.” Psychology Reports. 2009 Oct;105(2):509-21.  https://pubmed.ncbi.nlm.nih.gov/19928612/
+Whissell Cynthia. N.D. "Whissell's Dictionary of Affect in Language technical manual and user's guide" http://www.cs.columbia.edu/~julia/papers/dict_of_affect/DictofAffectinLang.README.pdf
+
+
