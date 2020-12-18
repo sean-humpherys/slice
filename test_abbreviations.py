@@ -16,6 +16,10 @@ assert abbr.is_abbreviation("mister") == False
 assert abbr.is_abbreviation("Dr.") == False
 assert abbr.is_abbreviation("") == False
 
+words = ["in", "doctor", "mister", "Dr"]
+list_answers = [abbr.is_abbreviation(word) for word in words]
+assert list_answers == [False, False, False, True]
+
 print("Test Passed")
 
 """Design notes
