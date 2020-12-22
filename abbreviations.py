@@ -23,4 +23,5 @@ class Abbreviation:
         Return: 
             boolean.  True if the word is in a list of predefined abbreviations
         """
+        # Consider adding trim and remove last period to make the is_abbreviation function more universal
         return True if word.lower() in self.abbreviations else False
